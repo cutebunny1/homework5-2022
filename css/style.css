@@ -1,0 +1,159 @@
+#logo {
+    width: 475px;
+    animation: hw5_move 5s;
+}
+
+@keyframes hw5_move {
+    from {width: 25px;}
+    to {width: 475px;}
+}
+
+@media (prefers-reduced-motion) {
+    #logo {
+        animation: none;
+    }
+}
+
+body {
+    font-family: 'Poppins', serif;
+    background-color: #d1d1d1;
+    background-image: url("../images/concrete_seamless.png");
+
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card > header {
+    background: #288088;
+    border: 2px solid #45ADAD;
+    border-radius: 50px 50px 0px 0px;
+    padding: 20px 0 20px 0;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+a:visited {
+    color: blue;
+    text-decoration: underline;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 450px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.pricing {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* #main div:nth-of-type(2) {
+    flex-basis: 100px;
+  } */
+
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px 10px 10px 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+}
+
+@media only screen and (min-width: 900px) {
+    /* aligning header to the left side */
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* aligning nav links to the right side */
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 275px;
+        border-radius: 50px 50px 0px 0px;
+    }
+    
+    .pricing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* flex-wrap: wrap; */
+    }
+
+    body > header {
+        position: sticky;
+        z-index: 1;
+        top: 0;
+    }
+}
+
+/* for horizontal */
+/* justify-content: center; */
+
+/* for vertically centering */
+/* align-items: center; */
+
+
+
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .pricing {
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+
+    .gallery {
+        display: none;
+    }
+
+    #gallery {
+        display: none;
+    }
+
+    .card li:nth-child(2)::after{
+        content: "\1F44D";
+    }
+}
